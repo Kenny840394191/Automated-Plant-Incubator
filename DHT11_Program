@@ -1,4 +1,4 @@
-### DHT11 PYTHON
+#!/DHT11_PYTHON
 #!/usr/bin/python
 import RPi.GPIO as GPIO
 import time
@@ -67,5 +67,3 @@ else:
   print "temperature :", temperature, "*C, humidity :", humidity, "% check :", check, ", tmp :", tmp
 
 GPIO.cleanup()
-
-### TEST RESULT
