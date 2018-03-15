@@ -1,0 +1,31 @@
+#!/usr/bin/python
+#coding=utf-8
+import RPi.GPIO as GPIO
+import time
+
+#hui tiao han shu
+def callback(channel)
+    if GPIO.input(channel):
+       print u'Soil is dry'
+    else:
+       print u'Soil is wet'
+         
+#ding yi zheng jiao pai xu wei BOARD xing shi
+GPIO.setmode(GPIO.BOARD)
+
+#zhen jiao
+channel = 11
+#ding yi zhen jiao input 
+GPIO.setup(channel, GPIO.IN)
+
+#tian jia jian dan shi jian
+GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=200)
+#tian jia shi jian chu fa de hui tiao han shu
+GPIO.add_event_callback(channel, callback)
+
+#bao chi zhu jin cheng bu tui chu
+while True:
+  time.sleep(0.1)
+  
+  
+ 
