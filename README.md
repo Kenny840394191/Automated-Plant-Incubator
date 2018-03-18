@@ -18,3 +18,5 @@ The incubator will be put in the foundation. And it will pinwheel with the found
 ### CONNECTION DIAGRAM
 
 ![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Connection%20Diagram.png)
+
+Then we will design a PCB according to the connection diagram.
