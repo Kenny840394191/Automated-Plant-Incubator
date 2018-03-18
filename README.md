@@ -14,3 +14,7 @@ The incubator will be put in the foundation. And it will pinwheel with the found
 ### BLOCK DIAGRAM
 
 ![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Block%20Diagram.png)
+
+### CONNECTION DIAGRAM
+
+![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Connection%20Diagram.png)
