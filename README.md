@@ -22,7 +22,7 @@ The incubator will be put in the foundation. And it will pinwheel with the found
 Then we will design a PCB according to the connection diagram.
 
 
-### 5V 1Channel Relay
+# 5V 1Channel Relay
 ![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/5V%201Channel%20Relay.jpg)
 
 I this project, we need to drive a motor and a small water pump. 
@@ -31,3 +31,5 @@ First the motor cannot be driven by the Raspberry Pi directly, so a 5V 1 channel
 In fact the main function of the 5V 1 channel relay model is boosted the voltage. The reason why we use the relay is the water pump can only be driven by 12V, but the Raspberry Pi only can supply 5V. Therefore we decided to use the relay model to boost the 5V to 12V to drive the small water pump. 
 
 ![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Relay%20model%20and%20water%20pump.jpg)
+
+### Working Principle
