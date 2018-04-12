@@ -30,3 +30,4 @@ First the motor cannot be driven by the Raspberry Pi directly, so a 5V 1 channel
 
 In fact the main function of the 5V 1 channel relay model is boosted the voltage. The reason why we use the relay is the water pump can only be driven by 12V, but the Raspberry Pi only can supply 5V. Therefore we decided to use the relay model to boost the 5V to 12V to drive the small water pump. 
 
+![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Relay%20model%20and%20water%20pump.jpg)
