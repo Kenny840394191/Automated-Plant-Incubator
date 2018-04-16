@@ -39,6 +39,12 @@ if c==1:
             time.sleep(1)
             d = d+1
             break
+        
+        while gpio.input(11)==gpio.HIGH:
+            print "NO light"
+            time.sleep(1)
+            d = d+1
+            break
             
 ################################ Humidity #######################
 elif c==2
@@ -74,12 +80,14 @@ elif c==3:
         
         time.sleep(2)
         gpio.setup(15.gpio.OUT)
-        gpio.setup(15.gpio.HIGH)
+        
+        gpio.output(15.gpio.HIGH)
         time.sleep(1)
-        gpio.setup(15.gpio.LOW)
+        
+        gpio.output(15.gpio.LOW)
         time.sleep(0.02)
         
-        gpio.setup(15.gpio.HIGH)
+        gpio.output(15.gpio.HIGH)
         time.sleep(0.00001)
         
         gpio.setup(15.gpio.IN)
