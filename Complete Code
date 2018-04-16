@@ -1,0 +1,165 @@
+
+import RPi.GPIO as gpio
+import time
+import smbus
+gpio.setwarnings(False)
+gpio.setmode(gpio.BOARD)
+
+time.sleep(1)
+
+gpio.setup(11,gpio.IN) #photoresisten
+gpio.setup(13,gpio.IN) #YL-69
+gpio.setup(15,gpio.IN) #DHT11
+
+_DEV_ADDR=0x23
+
+_CMD_PWR_OFF=0x00
+_CMD_PWR_ON=0x01
+_CMD_REST=0x07
+
+_CMD_THRES2=0x21
+
+_CMD_SEN100H=0x42
+_CMD_SEN100L=0x65
+
+d=0
+X=1
+
+while X==1:
+      c = input("which part you want check: ")
+
+################################# Photoresisten #################################
+if c==1:
+    d=0
+    print "Photoresisten"
+    while (d<20):
+    
+        while gpio.input(11)==gpio.LOW:
+            print "light"
+            time.sleep(1)
+            d = d+1
+            break
+            
+################################ Humidity #######################
+elif c==2
+    d=0
+    print "Humidity"
+    while (d<20)
+    
+       while gpio.input(13)==gpio.HIGH:
+           print "Dry"
+           time.sleep(1)
+           d = d+1
+           break
+           
+       while gpio.input(13)==gpio.LOW:
+           print "Wet"
+           time.sleep(1)
+           d = d+1
+           break
+           
+########################################### Temperature ############################
+elif c==3:
+    d=0
+    print "Temperature"
+    while (d<10):
+    
+        data=[]
+        j=0
+        def delay(i):
+            a=0
+            for j in range(i):
+                a+1
+        j=0
+        
+        time.sleep(2)
+        gpio.setup(15.gpio.OUT)
+        gpio.setup(15.gpio.HIGH)
+        time.sleep(1)
+        gpio.setup(15.gpio.LOW)
+        time.sleep(0.02)
+        
+        gpio.setup(15.gpio.HIGH)
+        time.sleep(0.00001)
+        
+        gpio.setup(15.gpio.IN)
+        
+        while gpio.input(15)==gpio.LOW
+            continue
+        
+        while gpio.input(15)==gpio.HIGH
+            continue
+            
+        while j<40:
+            k=0
+            while gpio.input(15)==0:
+                continue
+                
+            while gpio.input(15)==1:
+                k+=1
+                if k>100:
+                    break
+                if k<8:
+                data.append(0)
+                else:
+                data.append(1)
+                j+=1
+            
+            humidity_bit=data[0:8]
+            humidity_point_bit=data[8:16]
+            temperature_bit=data[16:24]
+            temperature_point_bit=data[24:32]
+            check_bit=data[32:40]
+            
+            humidity=0
+            humidity_point=0
+            temperature=0
+            temperature_point=0
+            check=0
+            
+            for i in range(8)
+                humidity+=humidity_bit[i]*2**(7-i)
+                humidity_point+=humidity_point_bit[i]*2**(7-i)
+                temperature+=temperature_bit[i]*2**(7-i)
+                temperature_point+=temperature_ponit_bit[i]*2**(7-i)
+                check+=check_bit[i]*2**(7-i)
+                
+             tmp=humidity+humidity_point+temperature+temperature_point
+             if check=tmp:
+                print "temperature", temperature, "Humidity", Humidity, "%"
+             else:
+                 print "wrong"
+                 
+             d = d+1
+             
+######################################### Light Illumination ######################################
+elif c==4
+    d=0
+    print "Illumination"
+    while (d<20):
+        bus=smbus.SMBus(1)
+        bus.write_byte(_DEV_ADDR,_CMD_PWR_ON)
+        bus.write_byte(_DEV_ADDR,_CMD_REST)
+        bus.write_byte(_DEV_ADDR,_CMD_SEN100H)
+        bus.write_byte(_DEV_ADDR,_CMD_SEN100L)
+        bus.write_byte(_DEV_ADDR,_CMD_PWR_OFF)
+        
+        time.sleep(1)
+        
+        bus.write_byte(_DEV_ADDR,_CMD_PWR_ON)
+        bus.write_byte(_DEV_ADDR,_CMD_THRES2)
+        time.sleep(0.2)
+        
+        res=bus.read_word_data(_DEV_ADDR,0)
+        
+        res=((res>>8)&0xff)|(res<<8)&0xff00
+        res=round(res/(2*1.2),2)
+        
+        result=str(res)
+        print (result)
+        time.sleep(1)
+        d = d+1
+  
+#########################################################################################################
+else:
+    print "NO PART"
