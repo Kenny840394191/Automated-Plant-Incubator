@@ -21,7 +21,8 @@ The incubator will be put in the foundation. And it will pinwheel with the found
 
 ![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Connection%20Diagram.png)
 
-Then we will design a PCB according to the connection diagram.
+### CIRCUIT SIMULATION
+![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Circuit%20simulation.png)
 
 
 # 5V 1Channel Relay
