@@ -36,3 +36,8 @@ In fact the main function of the 5V 1 channel relay model is boosted the voltage
 ![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Relay%20model%20and%20water%20pump.jpg)
 
 ### Working Principle
+Relay is an electrical control device that is an electrical device that causes a predetermined step change in the controlled electrical quantity in an electrical output circuit when the change in the input quantity meets a specified requirement. It has an interactive relationship between the control system and the controlled system. Usually used in automated control circuits, it is actually an "automatic switch" that uses small currents to control large currents.
+
+Photoresistance connects the COM and NO in the relay, because, LOW voltage can make the NO port on, HIGH voltage can make it off. If the photoresistance outputs low voltage the motor should be driven, so photoresistance and motor should connect the NO port.
+
+Water pump connects the COM and NC, because High voltage can make the NC port on and when the YL-69 outputs high voltage the water pump should be driven. Therefore the water pump should be connected to the NO port. 
