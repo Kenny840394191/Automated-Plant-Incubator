@@ -43,3 +43,7 @@ Relay is an electrical control device that is an electrical device that causes a
 Photoresistance connects the COM and NO in the relay, because, LOW voltage can make the NO port on, HIGH voltage can make it off. If the photoresistance outputs low voltage the motor should be driven, so photoresistance and motor should connect the NO port.
 
 Water pump connects the COM and NC, because High voltage can make the NC port on and when the YL-69 outputs high voltage the water pump should be driven. Therefore the water pump should be connected to the NO port. 
+
+# Physical picture of automatic watering system
+![alt text](https://github.com/Kenny840394191/Automated-Plant-Incubator/blob/master/Physical%20picture%20of%20automatic%20watering%20system.jpg)
+This is the Automatic Water Plant System what we designed.
